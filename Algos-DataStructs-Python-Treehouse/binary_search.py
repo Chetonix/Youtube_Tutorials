@@ -17,7 +17,7 @@ def binary_search(list, target):
                 first = mid_point + 1
 
             else:
-                end = mid_point - 1 
+                end = mid_point - 1  
     
     return None
 
