@@ -17,4 +17,8 @@ chetonix.color("blue")
 chetonix.circle(100)
 chetonix.circle(-100)
 
+chetonix.width(15)
+chetonix.circle(200)
+chetonix.circle(-200)
+
 input()
