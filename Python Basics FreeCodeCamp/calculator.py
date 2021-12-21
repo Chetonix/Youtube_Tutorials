@@ -1,7 +1,8 @@
 def calculator():
-    num1 = input("Enter a number ")
-    num2 = input("Enter another number ")
-    sign = input("Enter the operator ")
+    cont = "c"
+    num1 = input("Enter a number: ")
+    num2 = input("Enter another number: ")
+    sign = input("Enter the operator: ")
 
     if sign == "+":
         return float(num1) + float(num2)
@@ -10,10 +11,21 @@ def calculator():
         return float(num1) - float(num2)
     
     if sign == "/":
-        return float(num1) / float(num2)
+        r = input("Please tell if you want remainder by saying y/n: ")
+        if r == "y":
+            return "%f: remainder and %f: division" %(float(num1) % float(num2), float(num1) / float(num2))
+        else:
+            return "%f: division" %(float(num1) / float(num2))
 
     if sign == "*":
         return float(num1) * float(num2)
 
+cont = "c"
 
-print(calculator())
+while (cont == "c"):
+    print(calculator())
+    cont = input("Type c to continue or any other key to exit: ")
+    
+        
+            
+
