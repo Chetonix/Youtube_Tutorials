@@ -1,8 +1,8 @@
 def calculator():
     cont = "c"
     num1 = input("Enter a number: ")
-    num2 = input("Enter another number: ")
     sign = input("Enter the operator: ")
+    num2 = input("Enter another number: ")
 
     if sign == "+":
         return float(num1) + float(num2)
