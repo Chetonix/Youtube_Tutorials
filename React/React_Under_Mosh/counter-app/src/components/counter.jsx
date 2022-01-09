@@ -1,17 +1,21 @@
 import React, { Component } from "react";
 class Counter extends React.Component {
   state = {
-    count: 0,
+    value: this.props.value,
     tags: ["tag1", "tag2", "tag3"],
   };
   constructor() {
     super();
-    this.handleIncrement = this.handleIncrement.bind(this);
+    //this.handleIncrement = this.handleIncrement.bind(this);
   }
-  handleIncrement() {
-    console.log("Increment Clicked!", this);
+
+  //could have used arrow notation to be able for 'this' to work below:
+  handleIncrement = (product) => {
+    // console.log("Increment Clicked!", this);
     // console.log(this.state);
-  }
+    //console.log(product);
+    this.setState({ value: this.state.value + 1 });
+  };
   // styles = { fontSize: 10, color: "grey" };
   renderTags() {
     if (this.state.tags.length === 0) return <p>There are no tags!</p>;
@@ -30,7 +34,7 @@ class Counter extends React.Component {
       <div>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button
-          onClick={this.handleIncrement}
+          onClick={() => this.handleIncrement({ id: 1 })}
           className="btn btn-secondary btn-sm"
         >
           Increment
@@ -42,13 +46,13 @@ class Counter extends React.Component {
 
   getBadgeClasses() {
     let classes = "badge m-2 bg-";
-    classes += this.state.count === 0 ? "warning" : "primary";
+    classes += this.state.value === 0 ? "warning" : "primary";
     return classes;
   }
 
   formatCount() {
-    const { count } = this.state;
-    return count === 0 ? "Zero" : count;
+    const { value } = this.state;
+    return value === 0 ? "Zero" : value;
   }
 }
 
