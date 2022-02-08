@@ -1,0 +1,11 @@
+.grid {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-template-rows: 100px 100px;
+  grid-gap: 12px;
+  justify-items: center;
+}
+
+.box {
+  border: 1px solid #eee;
+}
